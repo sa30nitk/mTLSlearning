@@ -11,7 +11,7 @@ import (
 
 func main() {
 
-	cert, err := tls.LoadX509KeyPair("server-certs/cert.pem", "server-certs/key.pem")
+	cert, err := tls.LoadX509KeyPair("client-certs/cert.pem", "client-certs/key.pem")
 	if err != nil {
 		log.Fatal(err)
 	}

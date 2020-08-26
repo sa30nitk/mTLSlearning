@@ -14,7 +14,7 @@ func main() {
 		io.WriteString(w, "pong\n")
 	})
 
-	caCert, err := ioutil.ReadFile("server-certs/cert.pem")
+	caCert, err := ioutil.ReadFile("client-certs/cert.pem")
 	if err != nil {
 		log.Fatal(err)
 	}
