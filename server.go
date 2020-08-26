@@ -11,5 +11,5 @@ func main() {
 		io.WriteString(w, "pong\n")
 	})
 
-	log.Fatal(http.ListenAndServeTLS(":8443", "cert.pem", "key.pem", nil))
+	log.Fatal(http.ListenAndServeTLS(":8443", "server-certs/cert.pem", "server-certs/key.pem", nil))
 }
