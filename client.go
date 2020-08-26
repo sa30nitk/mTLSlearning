@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	r, err := http.Get("http://localhost:8080/ping")
+	r, err := http.Get("https://localhost:8443/ping")
 	if err != nil {
 		log.Fatal(err)
 	}

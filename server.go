@@ -2,6 +2,7 @@ package main
 
 import (
 	"io"
+	"log"
 	"net/http"
 )
 
@@ -10,5 +11,5 @@ func main() {
 		io.WriteString(w, "pong\n")
 	})
 
-	http.ListenAndServe(":8080", nil)
+	log.Fatal(http.ListenAndServeTLS(":8443", "cert.pem", "key.pem", nil))
 }
