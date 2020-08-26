@@ -11,6 +11,11 @@ import (
 
 func main() {
 
+	cert, err := tls.LoadX509KeyPair("server-certs/cert.pem", "server-certs/key.pem")
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	caCert, err := ioutil.ReadFile("server-certs/cert.pem")
 	if err != nil {
 		log.Fatal(err)
@@ -22,7 +27,8 @@ func main() {
 	client := &http.Client{
 		Transport: &http.Transport{
 			TLSClientConfig: &tls.Config{
-				RootCAs: caCertPool,
+				RootCAs:      caCertPool,
+				Certificates: []tls.Certificate{cert},
 			},
 		},
 	}
